@@ -50,8 +50,9 @@
 
 * **解析(Resolution)**
 > **解析阶段是虚拟机将常量池内的符号引用替换为直接引用的过程**
->>符号引用（Symbolic References）：符号引用以一组符号来描述所引用的目标，符号可以是任何形式的字面量，只要使用时能无歧义地定位到目标即可。  
+>>符号引用（Symbolic References）：符号引用以一组符号来描述所引用的目标，符号可以是任何形式的字面量，只要使用时能无歧义地定位到目标即可。   
 >>直接引用（Direct References）：直接引用可以是直接指向目标的指针、相对偏移量或是一个能间接定位到目标的句柄。
+>>当遇到anewarray、checkcast、getfield、getstatic、instanceof、invokedynamic、invokeinterface、invokespecial、invokestatic、invokevirtual、ldc、ldc_w、multianewarray、new、putfield和putstatic这16个用于操作符号引用的字节码指令之前，先对它们所使用的符号引用进行解析
 ## 3.初始化(Initialization)
 > 初始化时调用<clinit>()方法对类进行初始化，通常就是从上至下的顺序对代码中的静态变量赋值以及执行静态代码块
 > ### JVM规范中规定了五种情况下需要执行初始化操作,并且以下五种方式都算作:**主动引用**  
