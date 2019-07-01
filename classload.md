@@ -49,7 +49,9 @@
 > **重点**：在准备阶段,如果是常量则直接从常量池中将数据进行赋值
 
 * **解析(Resolution)**
-
+> **解析阶段是虚拟机将常量池内的符号引用替换为直接引用的过程**
+>>符号引用（Symbolic References）：符号引用以一组符号来描述所引用的目标，符号可以是任何形式的字面量，只要使用时能无歧义地定位到目标即可。  
+>>直接引用（Direct References）：直接引用可以是直接指向目标的指针、相对偏移量或是一个能间接定位到目标的句柄。
 ## 3.初始化(Initialization)
 > 初始化时调用<clinit>()方法对类进行初始化，通常就是从上至下的顺序对代码中的静态变量赋值以及执行静态代码块
 > ### JVM规范中规定了五种情况下需要执行初始化操作,并且以下五种方式都算作:**主动引用**  
@@ -63,7 +65,7 @@
  >>2.这里要详细的说下如果是一个接口被初始化的时候,其父接口则不需要初始化,这一点是接口与类不同的地方  
  >>3.数组是由JVM自动创建的,ClassLoad类注解中提到,原文如下"objects for array classes are not created by class loaders, but are created automatically as required by the Java runtime.The class loader for an array class, as returned by is the same as the class loader for its element type; if the element type is a primitive type, then the array class has no class loader."   
  >>4.如过A类引用了B类的一个常量,并且这个常量是一个不用在运行期就能确定的值,那么在编译期,就会将这个常量放入A类的常量池,自然就不会加载B类,直接运行A类即可(简单的说就是你将编译后的B.class文件删除后一样可以执行A.class文件)  
- >>5.如果一个类中A类继承B类,A类中有个静态变量a,如果C类中通过B.a去引用A类中的静态变量时,B类不做初始化.因为a是A的静态变量所以,只会初始化A类。B类是否做加载和验证在虚拟机规范中并未明确规定,但我认为B类一定会被加载。
+ >>5.如果一个类中A类继承B类,A类中有个静态变量a,如果C类中通过B.a去引用A类中的静态变量时,B类不做初始化.因为a是A的静态变量所以,只会初始化A类。B类是否做加载和验证在虚拟机规范中并未明确规定。
 ## 4.使用(Using)
 
 ## 5.卸载(Unloading)
