@@ -6,4 +6,6 @@
 严格约束意味着所有表达式的结果都必须是 IEEE 754 算法对操作数预期的结果，以单精度和双精度格式表示。    
 如果你想让你的浮点运算更加精确，而且不会因为不同的硬件平台所执行的结果不一致的话，可以用关键字strictfp.
 以上为wiki中对这个关键字的介绍。但是我发现这个关键字在JVMS并没有出现在Class的ACC_FLAG中
-以下为类的ACC
+以下为类的ACC_FLAG表  
+
+[CLASS_ACC_FLAG]:https://github.com/QuinnGK/JVM/blob/master/JVMS/image/Class%20ACC_FLAG.jpeg
