@@ -54,7 +54,7 @@ public class cn/infisa/chronic2/base/TestStrictfp {
 }
 ```
 
-可以看到类上并没吹昂strictfp关键字。而是在每个方法中出现。看来是javac干了这件事
+可以看到类上并没有strictfp关键字。而是在每个方法中出现。看来是javac干了这件事
 
 ## strictfp 作用在方法上
 ```java 
