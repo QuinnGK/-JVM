@@ -24,12 +24,12 @@
 >>1.文件格式验证  
 验证字节流是否符合Class文件格式的规范  
 >>2.元数据验证  
-对字节码描述的信息进行语义分析，以保证其描述的信息符合Java语言规范的要求
+对字节码描述的信息进行语义分析，以保证其描述的信息符合Java语言规范的要求  
 >>3.字节码验证  
 通过数据流和控制流分析，确定程序语义是合法的、符合逻辑的,这个阶段将对类的方法体进行校验分析，保证被校验类的方法在运行时不会做出危害虚拟机安全的事件    
 >>JDK1.6之后在字节码方法表的Code属性的属性表中加入StackMapTable属性用于做类型验证(**详细请移步字节码结构**)   
->>类型推导方式进行校验与类型检查验证(stackMapTable)这两种实现方式
->>4.符号引用验证  
+>>类型推导方式进行校验与类型检查验证(stackMapTable)这两种实现方式   
+>>4.符号引用验证   
 **解析阶段中发生**。符号引用验证可以看做是对类自身以外（常量池中的各种符号引用）的信息进行匹配性校验
 
 >>详细信息请移步官方文档[格式检查](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-4.html#jvms-4.8)、[验证class文件](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-4.html#jvms-4.10)、[虚拟机代码的约束](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-4.html#jvms-4.9)
